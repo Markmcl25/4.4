@@ -27,3 +27,12 @@ header h1 {
     background: linear-gradient(90deg, #1f4037 0%, #99f2c8 100%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ffeb3b !important;
+}
