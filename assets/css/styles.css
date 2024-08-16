@@ -1,0 +1,7 @@
+body {
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    /* or for a textured look: */
+    /* background: url('path-to-your-texture-image.png') repeat; */
+    background-size: cover; 
+    background-color: #f0f0f0; /* Fallback color */
+}
