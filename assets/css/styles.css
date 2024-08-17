@@ -5,3 +5,7 @@ body {
     background-size: cover; 
     background-color: #f0f0f0; /* Fallback color */
 }
+
+.custom-btn:hover {
+    background-color: #0a58ca; /* Slightly darker shade for hover effect */
+}
