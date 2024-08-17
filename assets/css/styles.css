@@ -1,3 +1,9 @@
+/* Apply the Google Font to the Header */
+header h1 {
+    font-family: 'Bungee Tint', sans-serif;
+    font-weight: 700; /* Use the bold weight */
+}
+
 body {
     background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
     /* or for a textured look: */
