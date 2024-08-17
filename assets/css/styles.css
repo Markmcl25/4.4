@@ -4,6 +4,17 @@ header h1 {
     font-weight: 700; /* Use the bold weight */
 }
 
+/* Style the header link */
+.header-link {
+    color: inherit; /* Inherit color from the h1 */
+    text-decoration: none; /* Remove underline */
+}
+
+.header-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Body background styling */
 body {
     background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
     /* or for a textured look: */
@@ -12,6 +23,3 @@ body {
     background-color: #f0f0f0; /* Fallback color */
 }
 
-.custom-btn:hover {
-    background-color: #0a58ca; /* Slightly darker shade for hover effect */
-}
