@@ -10,9 +10,6 @@ header h1 {
     text-decoration: none; /* Remove underline */
 }
 
-.header-link:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
 
 /* Body background styling */
 body {
