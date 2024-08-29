@@ -20,3 +20,28 @@ body {
     background-color: #f0f0f0; /* Fallback color */
 }
 
+/* Set the height of the carousel and make images cover the area */
+.carousel-item {
+    height: 500px; /* Example height, adjust as needed */
+    position: relative;
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style for overlay text */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
