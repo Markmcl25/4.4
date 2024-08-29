@@ -22,7 +22,7 @@ body {
 
 /* Set the height of the carousel and make images cover the area */
 .carousel-item {
-    height: 500px; /* Example height, adjust as needed */
+    height: 1000px; /* Example height, adjust as needed */
     position: relative;
 }
 
