@@ -2,6 +2,7 @@ import argparse
 import gspread
 from google.oauth2.service_account import Credentials
 
+# Set up Google Sheets API credentials
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -13,8 +14,21 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('read-it-news')
 
+# Reference to the 'articles' worksheet
 articles = SHEET.worksheet('articles')
 
-data = articles.get_all_values()
-
-print(data) 
+# Function to create a new article
+def create_article(args):
+# Prepare the data to insert
+    new_article = [
+        args.article_id,
+        args.title,
+        args.content,
+        args.author,
+        args.category,
+        args.published_date,
+        args.image_url
+    ]
+    # Append the new article to the sheet
+    articles_sheet.append_row(new_article)
+    print("Article created successfully.")
