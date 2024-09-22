@@ -19,5 +19,7 @@ from .views import politics_view, create_article_view
 
 urlpatterns = [
     path('politics/', politics_view, name='politics'),
+    path('sports/', sports_view, name='sports'),
+    path('technology/', technology_view, name='technology'),
     path('create/', create_article_view, name='create_article'),
 ]
