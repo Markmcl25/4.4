@@ -29,7 +29,7 @@ def create_article(args):
         args.published_date,
         args.image_url
     ]
-    # Append the new article to the sheet
+# Append the new article to the sheet
     articles_sheet.append_row(new_article)
     print("Article created successfully.")
 
@@ -38,6 +38,22 @@ def list_articles():
     data = articles_sheet.get_all_values()
     for row in data:
         print(row)
+
+ # Function to update an article
+def update_article(args):
+    row_to_update = int(args.article_id) + 1  # Adjust for header row
+    updated_article = [
+        args.article_id,
+        args.title,
+        args.content,
+        args.author,
+        args.category,
+        args.published_date,
+        args.image_url
+    ]
+    articles_sheet.delete_row(row_to_update)  # Remove the old article
+    articles_sheet.insert_row(updated_article, row_to_update)  # Insert the updated article
+    print("Article updated successfully.")
 
 # Set up argument parsing
 def main():
