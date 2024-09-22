@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -8,6 +8,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
 ]
+
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
@@ -25,24 +26,24 @@ def technology_view(request):
 
 def fetch_articles_view(request, template_name):
     # Fetch articles from Google Sheets
-    articles = articles_sheet.get_all_records()  # Fetching all articles
-
+    articles = articles_sheet.get_all_records()
     return render(request, template_name, {'articles': articles})
 
 def create_article_view(request):
     if request.method == 'POST':
         # Handle form submission for creating a new article
-        title = request.POST.get('title')
-        content = request.POST.get('content')
-        author = request.POST.get('author')
-        category = request.POST.get('category')
-        published_date = request.POST.get('published_date')
-        image_url = request.POST.get('image_url')
-        
+        title = request.POST.get('postTitle')
+        content = request.POST.get('postContent')
+        # Assume author, category, published_date, image_url are handled or set defaults
+        author = 'Admin'  # Example, you can modify this as needed
+        category = 'General'  # Default category
+        published_date = '2024-09-22'  # Default date, use actual date if needed
+        image_url = ''  # Optional image URL
+
         # Prepare the data to insert
         new_article = [None, title, content, author, category, published_date, image_url]  # Assuming ID is auto-generated
         articles_sheet.append_row(new_article)  # Append the new article to the sheet
 
-        return render(request, 'success.html', {'title': title})  # Redirect to a success page
+        return redirect('success')  # Redirect to a success page (you'll need to set this up)
 
     return render(request, 'create_article.html')  # Render the form for creating a new article
