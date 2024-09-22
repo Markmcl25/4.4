@@ -70,14 +70,15 @@
             <!-- New Post Section -->
             <section class="mb-5">
                 <h4>Create a New Post</h4>
-                <form id="new-post-form">
+                <form id="new-post-form" method="POST" action="{% url 'create_article' %}">
+                    <input type="hidden" name="category" value="Technology">
                     <div class="mb-3">
                         <label for="postTitle" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="postTitle" placeholder="Enter the title of your post" required>
+                        <input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="Enter the title of your post" required>
                     </div>
                     <div class="mb-3">
                         <label for="postContent" class="form-label">Content</label>
-                        <textarea class="form-control" id="postContent" rows="3" placeholder="What's on your mind?" required></textarea>
+                        <textarea class="form-control" id="postContent" name="postContent" rows="3" placeholder="What's on your mind?" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Post</button>
                 </form>
@@ -90,9 +91,9 @@
                     <!-- Example Post -->
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Exciting Game Last Night!</h5>
+                            <h5 class="card-title">Latest Tech Innovations!</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Posted on August 12, 2024</h6>
-                            <p class="card-text">Did you see the match last night? It was incredible! The last-minute goal was unbelievable.</p>
+                            <p class="card-text">Discover the latest advancements in technology that are shaping our future.</p>
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex align-items-center">
                                     <button class="btn btn-sm btn-outline-success me-2">Upvote</button>
@@ -105,7 +106,7 @@
                             <div class="collapse mt-3" id="commentSection1">
                                 <h6>Comments</h6>
                                 <div class="mb-2">
-                                    <strong>User1:</strong> What a game! That goal was amazing.
+                                    <strong>User1:</strong> This technology is groundbreaking!
                                 </div>
                                 <form>
                                     <div class="mb-3">
