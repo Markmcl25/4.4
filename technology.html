@@ -71,6 +71,7 @@
             <section class="mb-5">
                 <h4>Create a New Post</h4>
                 <form id="new-post-form" method="POST" action="{% url 'create_article' %}">
+                    {% csrf_token %}
                     <input type="hidden" name="category" value="Technology">
                     <div class="mb-3">
                         <label for="postTitle" class="form-label">Title</label>
