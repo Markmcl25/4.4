@@ -55,6 +55,12 @@ def update_article(args):
     articles_sheet.insert_row(updated_article, row_to_update)  # Insert the updated article
     print("Article updated successfully.")
 
+    # Function to delete an article
+def delete_article(args):
+    row_to_delete = int(args.article_id) + 1  # Adjust for header row
+    articles_sheet.delete_row(row_to_delete)
+    print("Article deleted successfully.")
+
 # Set up argument parsing
 def main():
     parser = argparse.ArgumentParser(description="Google Sheets Article Management")
