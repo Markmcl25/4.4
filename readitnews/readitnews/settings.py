@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'readitnews.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',  
+        'USER': 'your_username',       
+        'PASSWORD': 'your_password',   
+        'HOST': 'localhost',           # or your database host (e.g., an IP address if using cloud hosting)
+        'PORT': '5432',                # Default port for PostgreSQL
     }
 }
+
 
 
 # Password validation
